@@ -1,18 +1,16 @@
 <?php
 /* Template Name: Application */
 
-
-
-
+//ett sätt att få ut information från posts från wordpress.
 $cURLConnection = curl_init();
 
 curl_setopt($cURLConnection, CURLOPT_URL, 'http://localhost/labb2-cornelia/wp-json/wp/v2/posts');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
-$phoneList = curl_exec($cURLConnection);
+$List = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
-$data = json_decode($phoneList);
+$data = json_decode($List);
 
 // var_dump($data);
 
